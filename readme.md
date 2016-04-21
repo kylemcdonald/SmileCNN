@@ -1,4 +1,4 @@
-# SmileDetection
+# SmileCNN
 
 Smile Detection with a Deep Convolutional Neural Net using [Keras](http://keras.io).
 
