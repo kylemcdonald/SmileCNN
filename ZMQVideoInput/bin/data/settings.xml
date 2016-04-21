@@ -1,0 +1,16 @@
+<xml>
+	<camera>
+		<width>640</width>
+		<height>480</height>
+	</camera>
+	<output>
+		<zoom>2.5</zoom>
+		<width>32</width>
+		<height>32</height>
+		<color>0</color>
+		<flip>1</flip>
+	</output>
+	<zmq>
+		<address>tcp://*:14000</address>
+	</zmq>
+</xml>
