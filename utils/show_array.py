@@ -5,6 +5,7 @@ import IPython.display
 import shutil
 
 def show_array(a, fmt='png', filename=None):
+    a = np.squeeze(a)
     a = np.uint8(np.clip(a, 0, 255))
     image_data = StringIO()
     PIL.Image.fromarray(a).save(image_data, fmt)

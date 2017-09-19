@@ -1,0 +1,7 @@
+.*
+*.pyc
+*.json
+*.npy
+*.h5
+SMILEsmileD-master
+!.gitignore
