@@ -1,0 +1,766 @@
+[INFO 2018-06-29 20:04:47,548 PID:32896 /usr/local/lib/python3.5/dist-packages/mms/mxnet_model_server.py:__init__:94 Initialized model serving.
+[INFO 2018-06-29 20:04:47,549 PID:32896 /usr/local/lib/python3.5/dist-packages/mms/model_service/mxnet_model_service.py:__init__:97 Failed to parse epoch from param file, setting epoch to 0
+[INFO 2018-06-29 20:04:47,561 PID:32896 /usr/local/lib/python3.5/dist-packages/mms/serving_frontend.py:add_endpoint:185 Adding endpoint: smileCNN_predict to Flask
+[INFO 2018-06-29 20:04:47,561 PID:32896 /usr/local/lib/python3.5/dist-packages/mms/serving_frontend.py:add_endpoint:185 Adding endpoint: ping to Flask
+[INFO 2018-06-29 20:04:47,562 PID:32896 /usr/local/lib/python3.5/dist-packages/mms/serving_frontend.py:add_endpoint:185 Adding endpoint: api-description to Flask
+[INFO 2018-06-29 20:04:47,562 PID:32896 /usr/local/lib/python3.5/dist-packages/mms/serving_frontend.py:add_endpoint:185 Adding endpoint: root to Flask
+[INFO 2018-06-29 20:04:47,579 PID:32896 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric CPUUtilization for last 60 seconds is 23.700000
+[INFO 2018-06-29 20:04:47,588 PID:32896 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUsed for last 60 seconds is 1987.726562
+[INFO 2018-06-29 20:04:47,589 PID:32896 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryAvailable for last 60 seconds is 733989.011719
+[INFO 2018-06-29 20:04:47,590 PID:32896 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUtilization for last 60 seconds is 0.500000
+[INFO 2018-06-29 20:04:47,591 PID:32896 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUsed for last 60 seconds is 16.796947
+[INFO 2018-06-29 20:04:47,592 PID:32896 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskAvailable for last 60 seconds is 31.594753
+[INFO 2018-06-29 20:04:47,593 PID:32896 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUtilization for last 60 seconds is 34.700000
+[INFO 2018-06-29 20:04:47,593 PID:32896 /usr/local/lib/python3.5/dist-packages/mms/mxnet_model_server.py:start_model_serving:108 Service started successfully.
+[INFO 2018-06-29 20:04:47,593 PID:32896 /usr/local/lib/python3.5/dist-packages/mms/mxnet_model_server.py:start_model_serving:109 Service description endpoint: 127.0.0.1:8080/api-description
+[INFO 2018-06-29 20:04:47,594 PID:32896 /usr/local/lib/python3.5/dist-packages/mms/mxnet_model_server.py:start_model_serving:110 Service health endpoint: 127.0.0.1:8080/ping
+[INFO 2018-06-29 20:04:47,599 PID:32896 /usr/local/lib/python3.5/dist-packages/werkzeug/_internal.py:_log:88  * Running on http://127.0.0.1:8080/ (Press CTRL+C to quit)
+[INFO 2018-06-29 20:05:26,408 PID:32896 /usr/local/lib/python3.5/dist-packages/mms/serving_frontend.py:predict_callback:467 Request input: /conv2d_1_input1 should be image with jpeg format.
+[INFO 2018-06-29 20:05:26,408 PID:32896 /usr/local/lib/python3.5/dist-packages/mms/request_handler/flask_handler.py:get_file_data:137 Getting file data from request.
+[ERROR 2018-06-29 20:05:26,503 PID:32896 /usr/local/lib/python3.5/dist-packages/mms/serving_frontend.py:predict_callback:505 Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/mms/serving_frontend.py", line 501, in predict_callback
+    response = modelservice.inference(input_data)
+  File "/usr/local/lib/python3.5/dist-packages/mms/model_service/model_service.py", line 105, in inference
+    data = self._postprocess(data)
+  File "/home/ubuntu/SmileCNN/smile-model-server-test/smileCNN/custom_service.py", line 41, in _postprocess
+    return {label:prob for prob, label in zip(d, self.labels)}
+NameError: name 'd' is not defined
+
+[INFO 2018-06-29 20:05:26,506 PID:32896 /usr/local/lib/python3.5/dist-packages/werkzeug/_internal.py:_log:88 127.0.0.1 - - [29/Jun/2018 20:05:26] "POST /smileCNN/predict HTTP/1.1" 500 -
+[INFO 2018-06-29 20:05:47,566 PID:32896 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric Prediction5XX for last 60 seconds is 1.000000
+[INFO 2018-06-29 20:05:47,568 PID:32896 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric PredictionTotal for last 60 seconds is 1.000000
+[INFO 2018-06-29 20:05:47,580 PID:32896 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric CPUUtilization for last 60 seconds is 0.363636
+[INFO 2018-06-29 20:05:47,588 PID:32896 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUsed for last 60 seconds is 2000.101918
+[INFO 2018-06-29 20:05:47,589 PID:32896 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryAvailable for last 60 seconds is 733983.706676
+[INFO 2018-06-29 20:05:47,591 PID:32896 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUtilization for last 60 seconds is 0.500000
+[INFO 2018-06-29 20:05:47,592 PID:32896 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUsed for last 60 seconds is 16.796951
+[INFO 2018-06-29 20:05:47,593 PID:32896 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskAvailable for last 60 seconds is 31.594749
+[INFO 2018-06-29 20:05:47,594 PID:32896 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUtilization for last 60 seconds is 34.700000
+[INFO 2018-06-29 20:06:47,580 PID:32896 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric CPUUtilization for last 60 seconds is 0.000000
+[INFO 2018-06-29 20:06:47,589 PID:32896 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUsed for last 60 seconds is 1999.360677
+[INFO 2018-06-29 20:06:47,590 PID:32896 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryAvailable for last 60 seconds is 733984.385742
+[INFO 2018-06-29 20:06:47,591 PID:32896 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUtilization for last 60 seconds is 0.500000
+[INFO 2018-06-29 20:06:47,592 PID:32896 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUsed for last 60 seconds is 16.796969
+[INFO 2018-06-29 20:06:47,593 PID:32896 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskAvailable for last 60 seconds is 31.594732
+[INFO 2018-06-29 20:06:47,594 PID:32896 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUtilization for last 60 seconds is 34.700000
+[INFO 2018-06-29 20:07:47,581 PID:32896 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric CPUUtilization for last 60 seconds is 0.000000
+[INFO 2018-06-29 20:07:47,589 PID:32896 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUsed for last 60 seconds is 1998.276693
+[INFO 2018-06-29 20:07:47,590 PID:32896 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryAvailable for last 60 seconds is 733985.432292
+[INFO 2018-06-29 20:07:47,592 PID:32896 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUtilization for last 60 seconds is 0.500000
+[INFO 2018-06-29 20:07:47,593 PID:32896 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUsed for last 60 seconds is 16.796974
+[INFO 2018-06-29 20:07:47,594 PID:32896 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskAvailable for last 60 seconds is 31.594727
+[INFO 2018-06-29 20:07:47,595 PID:32896 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUtilization for last 60 seconds is 34.700000
+[INFO 2018-06-29 20:08:47,581 PID:32896 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric CPUUtilization for last 60 seconds is 0.000000
+[INFO 2018-06-29 20:08:47,589 PID:32896 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUsed for last 60 seconds is 1993.878581
+[INFO 2018-06-29 20:08:47,591 PID:32896 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryAvailable for last 60 seconds is 733989.852539
+[INFO 2018-06-29 20:08:47,592 PID:32896 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUtilization for last 60 seconds is 0.500000
+[INFO 2018-06-29 20:08:47,593 PID:32896 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUsed for last 60 seconds is 16.796976
+[INFO 2018-06-29 20:08:47,594 PID:32896 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskAvailable for last 60 seconds is 31.594724
+[INFO 2018-06-29 20:08:47,595 PID:32896 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUtilization for last 60 seconds is 34.700000
+[INFO 2018-06-29 20:09:47,581 PID:32896 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric CPUUtilization for last 60 seconds is 0.816667
+[INFO 2018-06-29 20:09:47,590 PID:32896 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUsed for last 60 seconds is 1993.015299
+[INFO 2018-06-29 20:09:47,591 PID:32896 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryAvailable for last 60 seconds is 733990.752930
+[INFO 2018-06-29 20:09:47,593 PID:32896 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUtilization for last 60 seconds is 0.500000
+[INFO 2018-06-29 20:09:47,594 PID:32896 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUsed for last 60 seconds is 16.791715
+[INFO 2018-06-29 20:09:47,595 PID:32896 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskAvailable for last 60 seconds is 31.599985
+[INFO 2018-06-29 20:09:47,595 PID:32896 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUtilization for last 60 seconds is 34.700000
+[INFO 2018-06-29 20:10:05,483 PID:33932 /usr/local/lib/python3.5/dist-packages/mms/mxnet_model_server.py:__init__:94 Initialized model serving.
+[INFO 2018-06-29 20:10:05,500 PID:33932 /usr/local/lib/python3.5/dist-packages/mms/serving_frontend.py:add_endpoint:185 Adding endpoint: smileCNN_predict to Flask
+[INFO 2018-06-29 20:10:05,501 PID:33932 /usr/local/lib/python3.5/dist-packages/mms/serving_frontend.py:add_endpoint:185 Adding endpoint: ping to Flask
+[INFO 2018-06-29 20:10:05,502 PID:33932 /usr/local/lib/python3.5/dist-packages/mms/serving_frontend.py:add_endpoint:185 Adding endpoint: api-description to Flask
+[INFO 2018-06-29 20:10:05,502 PID:33932 /usr/local/lib/python3.5/dist-packages/mms/serving_frontend.py:add_endpoint:185 Adding endpoint: root to Flask
+[INFO 2018-06-29 20:10:05,511 PID:33932 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric CPUUtilization for last 60 seconds is 23.500000
+[INFO 2018-06-29 20:10:05,511 PID:33932 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUsed for last 60 seconds is 2090.441406
+[INFO 2018-06-29 20:10:05,512 PID:33932 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryAvailable for last 60 seconds is 733893.324219
+[INFO 2018-06-29 20:10:05,514 PID:33932 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUtilization for last 60 seconds is 0.500000
+[INFO 2018-06-29 20:10:05,515 PID:33932 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUsed for last 60 seconds is 16.796989
+[INFO 2018-06-29 20:10:05,516 PID:33932 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskAvailable for last 60 seconds is 31.594711
+[INFO 2018-06-29 20:10:05,517 PID:33932 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUtilization for last 60 seconds is 34.700000
+[INFO 2018-06-29 20:10:05,517 PID:33932 /usr/local/lib/python3.5/dist-packages/mms/mxnet_model_server.py:start_model_serving:108 Service started successfully.
+[INFO 2018-06-29 20:10:05,517 PID:33932 /usr/local/lib/python3.5/dist-packages/mms/mxnet_model_server.py:start_model_serving:109 Service description endpoint: 127.0.0.1:8080/api-description
+[INFO 2018-06-29 20:10:05,517 PID:33932 /usr/local/lib/python3.5/dist-packages/mms/mxnet_model_server.py:start_model_serving:110 Service health endpoint: 127.0.0.1:8080/ping
+[INFO 2018-06-29 20:10:14,184 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/mxnet_model_server.py:__init__:94 Initialized model serving.
+[INFO 2018-06-29 20:10:14,202 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/serving_frontend.py:add_endpoint:185 Adding endpoint: smileCNN_predict to Flask
+[INFO 2018-06-29 20:10:14,203 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/serving_frontend.py:add_endpoint:185 Adding endpoint: ping to Flask
+[INFO 2018-06-29 20:10:14,203 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/serving_frontend.py:add_endpoint:185 Adding endpoint: api-description to Flask
+[INFO 2018-06-29 20:10:14,204 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/serving_frontend.py:add_endpoint:185 Adding endpoint: root to Flask
+[INFO 2018-06-29 20:10:14,211 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric CPUUtilization for last 60 seconds is 24.400000
+[INFO 2018-06-29 20:10:14,215 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUsed for last 60 seconds is 1977.636719
+[INFO 2018-06-29 20:10:14,216 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryAvailable for last 60 seconds is 734006.074219
+[INFO 2018-06-29 20:10:14,216 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUtilization for last 60 seconds is 0.500000
+[INFO 2018-06-29 20:10:14,217 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUsed for last 60 seconds is 16.796993
+[INFO 2018-06-29 20:10:14,218 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskAvailable for last 60 seconds is 31.594707
+[INFO 2018-06-29 20:10:14,218 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUtilization for last 60 seconds is 34.700000
+[INFO 2018-06-29 20:10:14,218 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/mxnet_model_server.py:start_model_serving:108 Service started successfully.
+[INFO 2018-06-29 20:10:14,219 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/mxnet_model_server.py:start_model_serving:109 Service description endpoint: 127.0.0.1:8080/api-description
+[INFO 2018-06-29 20:10:14,219 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/mxnet_model_server.py:start_model_serving:110 Service health endpoint: 127.0.0.1:8080/ping
+[INFO 2018-06-29 20:10:14,224 PID:34097 /usr/local/lib/python3.5/dist-packages/werkzeug/_internal.py:_log:88  * Running on http://127.0.0.1:8080/ (Press CTRL+C to quit)
+[INFO 2018-06-29 20:11:08,853 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/serving_frontend.py:predict_callback:467 Request input: /conv2d_1_input1 should be image with jpeg format.
+[INFO 2018-06-29 20:11:08,854 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/request_handler/flask_handler.py:get_file_data:137 Getting file data from request.
+[INFO 2018-06-29 20:11:08,936 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/serving_frontend.py:predict_callback:510 Response is text.
+[INFO 2018-06-29 20:11:08,936 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/request_handler/flask_handler.py:jsonify:159 Jsonifying the response: {'prediction': [[{'probability': 1.0, 'class': 'smiling'}, {'probability': 0.0, 'class': 'neutral'}]]}
+[INFO 2018-06-29 20:11:08,939 PID:34097 /usr/local/lib/python3.5/dist-packages/werkzeug/_internal.py:_log:88 127.0.0.1 - - [29/Jun/2018 20:11:08] "POST /smileCNN/predict HTTP/1.1" 200 -
+[INFO 2018-06-29 20:11:14,207 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric PredictionTotal for last 60 seconds is 1.000000
+[INFO 2018-06-29 20:11:14,212 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric CPUUtilization for last 60 seconds is 0.400000
+[INFO 2018-06-29 20:11:14,216 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUsed for last 60 seconds is 1986.943892
+[INFO 2018-06-29 20:11:14,217 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUtilization for last 60 seconds is 0.500000
+[INFO 2018-06-29 20:11:14,218 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryAvailable for last 60 seconds is 733996.757102
+[INFO 2018-06-29 20:11:14,218 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUsed for last 60 seconds is 16.796993
+[INFO 2018-06-29 20:11:14,220 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskAvailable for last 60 seconds is 31.594707
+[INFO 2018-06-29 20:11:14,220 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUtilization for last 60 seconds is 34.700000
+[INFO 2018-06-29 20:12:14,212 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric CPUUtilization for last 60 seconds is 0.000000
+[INFO 2018-06-29 20:12:14,216 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUsed for last 60 seconds is 1983.442057
+[INFO 2018-06-29 20:12:14,217 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUtilization for last 60 seconds is 0.500000
+[INFO 2018-06-29 20:12:14,218 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryAvailable for last 60 seconds is 734000.250977
+[INFO 2018-06-29 20:12:14,219 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUsed for last 60 seconds is 16.796997
+[INFO 2018-06-29 20:12:14,220 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskAvailable for last 60 seconds is 31.594704
+[INFO 2018-06-29 20:12:14,221 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUtilization for last 60 seconds is 34.700000
+[INFO 2018-06-29 20:13:14,213 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric CPUUtilization for last 60 seconds is 0.000000
+[INFO 2018-06-29 20:13:14,217 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUsed for last 60 seconds is 1982.276367
+[INFO 2018-06-29 20:13:14,218 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUtilization for last 60 seconds is 0.500000
+[INFO 2018-06-29 20:13:14,219 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryAvailable for last 60 seconds is 734001.408854
+[INFO 2018-06-29 20:13:14,220 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUsed for last 60 seconds is 16.797003
+[INFO 2018-06-29 20:13:14,221 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskAvailable for last 60 seconds is 31.594698
+[INFO 2018-06-29 20:13:14,222 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUtilization for last 60 seconds is 34.700000
+[INFO 2018-06-29 20:14:14,213 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric CPUUtilization for last 60 seconds is 0.000000
+[INFO 2018-06-29 20:14:14,217 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUsed for last 60 seconds is 1982.924154
+[INFO 2018-06-29 20:14:14,218 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUtilization for last 60 seconds is 0.500000
+[INFO 2018-06-29 20:14:14,219 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryAvailable for last 60 seconds is 734000.757812
+[INFO 2018-06-29 20:14:14,220 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUsed for last 60 seconds is 16.797009
+[INFO 2018-06-29 20:14:14,221 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskAvailable for last 60 seconds is 31.594692
+[INFO 2018-06-29 20:14:14,222 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUtilization for last 60 seconds is 34.700000
+[INFO 2018-06-29 20:15:14,214 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric CPUUtilization for last 60 seconds is 0.000000
+[INFO 2018-06-29 20:15:14,218 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUsed for last 60 seconds is 1982.802409
+[INFO 2018-06-29 20:15:14,219 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUtilization for last 60 seconds is 0.500000
+[INFO 2018-06-29 20:15:14,220 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryAvailable for last 60 seconds is 734000.879883
+[INFO 2018-06-29 20:15:14,221 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUsed for last 60 seconds is 16.797012
+[INFO 2018-06-29 20:15:14,222 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskAvailable for last 60 seconds is 31.594688
+[INFO 2018-06-29 20:15:14,222 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUtilization for last 60 seconds is 34.700000
+[INFO 2018-06-29 20:16:14,214 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric CPUUtilization for last 60 seconds is 0.000000
+[INFO 2018-06-29 20:16:14,218 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUsed for last 60 seconds is 1982.532878
+[INFO 2018-06-29 20:16:14,219 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUtilization for last 60 seconds is 0.500000
+[INFO 2018-06-29 20:16:14,220 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryAvailable for last 60 seconds is 734001.141602
+[INFO 2018-06-29 20:16:14,221 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUsed for last 60 seconds is 16.797012
+[INFO 2018-06-29 20:16:14,222 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskAvailable for last 60 seconds is 31.594688
+[INFO 2018-06-29 20:16:14,223 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUtilization for last 60 seconds is 34.700000
+[INFO 2018-06-29 20:17:14,215 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric CPUUtilization for last 60 seconds is 0.000000
+[INFO 2018-06-29 20:17:14,219 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUsed for last 60 seconds is 1979.476237
+[INFO 2018-06-29 20:17:14,220 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUtilization for last 60 seconds is 0.500000
+[INFO 2018-06-29 20:17:14,221 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryAvailable for last 60 seconds is 734004.205078
+[INFO 2018-06-29 20:17:14,222 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUsed for last 60 seconds is 16.797001
+[INFO 2018-06-29 20:17:14,223 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskAvailable for last 60 seconds is 31.594700
+[INFO 2018-06-29 20:17:14,224 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUtilization for last 60 seconds is 34.700000
+[INFO 2018-06-29 20:18:14,215 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric CPUUtilization for last 60 seconds is 0.000000
+[INFO 2018-06-29 20:18:14,219 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUsed for last 60 seconds is 1980.758789
+[INFO 2018-06-29 20:18:14,220 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUtilization for last 60 seconds is 0.500000
+[INFO 2018-06-29 20:18:14,221 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryAvailable for last 60 seconds is 734002.922201
+[INFO 2018-06-29 20:18:14,222 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUsed for last 60 seconds is 16.797010
+[INFO 2018-06-29 20:18:14,223 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskAvailable for last 60 seconds is 31.594691
+[INFO 2018-06-29 20:18:14,224 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUtilization for last 60 seconds is 34.700000
+[INFO 2018-06-29 20:19:14,216 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric CPUUtilization for last 60 seconds is 0.000000
+[INFO 2018-06-29 20:19:14,220 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUsed for last 60 seconds is 1980.516276
+[INFO 2018-06-29 20:19:14,221 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUtilization for last 60 seconds is 0.500000
+[INFO 2018-06-29 20:19:14,222 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryAvailable for last 60 seconds is 734003.160807
+[INFO 2018-06-29 20:19:14,223 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUsed for last 60 seconds is 16.797012
+[INFO 2018-06-29 20:19:14,224 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskAvailable for last 60 seconds is 31.594688
+[INFO 2018-06-29 20:19:14,224 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUtilization for last 60 seconds is 34.700000
+[INFO 2018-06-29 20:20:14,216 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric CPUUtilization for last 60 seconds is 0.000000
+[INFO 2018-06-29 20:20:14,220 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUsed for last 60 seconds is 1981.206706
+[INFO 2018-06-29 20:20:14,221 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUtilization for last 60 seconds is 0.500000
+[INFO 2018-06-29 20:20:14,222 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryAvailable for last 60 seconds is 734002.471029
+[INFO 2018-06-29 20:20:14,223 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUsed for last 60 seconds is 16.797012
+[INFO 2018-06-29 20:20:14,224 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskAvailable for last 60 seconds is 31.594688
+[INFO 2018-06-29 20:20:14,225 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUtilization for last 60 seconds is 34.700000
+[INFO 2018-06-29 20:21:14,217 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric CPUUtilization for last 60 seconds is 0.000000
+[INFO 2018-06-29 20:21:14,221 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUsed for last 60 seconds is 1984.207031
+[INFO 2018-06-29 20:21:14,222 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUtilization for last 60 seconds is 0.500000
+[INFO 2018-06-29 20:21:14,223 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryAvailable for last 60 seconds is 733999.466471
+[INFO 2018-06-29 20:21:14,224 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUsed for last 60 seconds is 16.797012
+[INFO 2018-06-29 20:21:14,225 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskAvailable for last 60 seconds is 31.594688
+[INFO 2018-06-29 20:21:14,226 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUtilization for last 60 seconds is 34.700000
+[INFO 2018-06-29 20:22:14,217 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric CPUUtilization for last 60 seconds is 0.000000
+[INFO 2018-06-29 20:22:14,221 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUsed for last 60 seconds is 1983.340495
+[INFO 2018-06-29 20:22:14,222 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUtilization for last 60 seconds is 0.500000
+[INFO 2018-06-29 20:22:14,223 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryAvailable for last 60 seconds is 734000.328776
+[INFO 2018-06-29 20:22:14,224 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUsed for last 60 seconds is 16.797016
+[INFO 2018-06-29 20:22:14,225 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskAvailable for last 60 seconds is 31.594685
+[INFO 2018-06-29 20:22:14,226 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUtilization for last 60 seconds is 34.700000
+[INFO 2018-06-29 20:23:14,218 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric CPUUtilization for last 60 seconds is 0.000000
+[INFO 2018-06-29 20:23:14,222 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUsed for last 60 seconds is 1982.840820
+[INFO 2018-06-29 20:23:14,223 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUtilization for last 60 seconds is 0.500000
+[INFO 2018-06-29 20:23:14,224 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryAvailable for last 60 seconds is 734000.828451
+[INFO 2018-06-29 20:23:14,225 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUsed for last 60 seconds is 16.797016
+[INFO 2018-06-29 20:23:14,226 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskAvailable for last 60 seconds is 31.594685
+[INFO 2018-06-29 20:23:14,227 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUtilization for last 60 seconds is 34.700000
+[INFO 2018-06-29 20:24:14,218 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric CPUUtilization for last 60 seconds is 0.000000
+[INFO 2018-06-29 20:24:14,222 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUsed for last 60 seconds is 1982.763672
+[INFO 2018-06-29 20:24:14,223 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUtilization for last 60 seconds is 0.500000
+[INFO 2018-06-29 20:24:14,224 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryAvailable for last 60 seconds is 734000.906250
+[INFO 2018-06-29 20:24:14,225 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUsed for last 60 seconds is 16.797016
+[INFO 2018-06-29 20:24:14,226 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskAvailable for last 60 seconds is 31.594685
+[INFO 2018-06-29 20:24:14,227 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUtilization for last 60 seconds is 34.700000
+[INFO 2018-06-29 20:25:14,219 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric CPUUtilization for last 60 seconds is 0.000000
+[INFO 2018-06-29 20:25:14,223 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUsed for last 60 seconds is 1982.750977
+[INFO 2018-06-29 20:25:14,224 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUtilization for last 60 seconds is 0.500000
+[INFO 2018-06-29 20:25:14,225 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryAvailable for last 60 seconds is 734000.919596
+[INFO 2018-06-29 20:25:14,226 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUsed for last 60 seconds is 16.797020
+[INFO 2018-06-29 20:25:14,227 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskAvailable for last 60 seconds is 31.594681
+[INFO 2018-06-29 20:25:14,228 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUtilization for last 60 seconds is 34.700000
+[INFO 2018-06-29 20:26:14,219 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric CPUUtilization for last 60 seconds is 0.000000
+[INFO 2018-06-29 20:26:14,223 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUsed for last 60 seconds is 1984.276693
+[INFO 2018-06-29 20:26:14,224 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUtilization for last 60 seconds is 0.500000
+[INFO 2018-06-29 20:26:14,225 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryAvailable for last 60 seconds is 733999.398438
+[INFO 2018-06-29 20:26:14,226 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUsed for last 60 seconds is 16.797021
+[INFO 2018-06-29 20:26:14,227 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskAvailable for last 60 seconds is 31.594680
+[INFO 2018-06-29 20:26:14,228 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUtilization for last 60 seconds is 34.700000
+[INFO 2018-06-29 20:27:14,220 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric CPUUtilization for last 60 seconds is 0.000000
+[INFO 2018-06-29 20:27:14,224 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUsed for last 60 seconds is 1987.821940
+[INFO 2018-06-29 20:27:14,225 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUtilization for last 60 seconds is 0.500000
+[INFO 2018-06-29 20:27:14,226 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryAvailable for last 60 seconds is 733995.849284
+[INFO 2018-06-29 20:27:14,227 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUsed for last 60 seconds is 16.797030
+[INFO 2018-06-29 20:27:14,228 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskAvailable for last 60 seconds is 31.594671
+[INFO 2018-06-29 20:27:14,229 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUtilization for last 60 seconds is 34.700000
+[INFO 2018-06-29 20:28:14,220 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric CPUUtilization for last 60 seconds is 19.216667
+[INFO 2018-06-29 20:28:14,224 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUsed for last 60 seconds is 2170.284505
+[INFO 2018-06-29 20:28:14,225 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUtilization for last 60 seconds is 0.508333
+[INFO 2018-06-29 20:28:14,226 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryAvailable for last 60 seconds is 733813.385742
+[INFO 2018-06-29 20:28:14,227 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUsed for last 60 seconds is 16.797020
+[INFO 2018-06-29 20:28:14,228 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskAvailable for last 60 seconds is 31.594681
+[INFO 2018-06-29 20:28:14,229 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUtilization for last 60 seconds is 34.700000
+[INFO 2018-06-29 20:29:14,221 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric CPUUtilization for last 60 seconds is 0.000000
+[INFO 2018-06-29 20:29:14,225 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUsed for last 60 seconds is 1980.889323
+[INFO 2018-06-29 20:29:14,226 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUtilization for last 60 seconds is 0.500000
+[INFO 2018-06-29 20:29:14,227 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryAvailable for last 60 seconds is 734002.774089
+[INFO 2018-06-29 20:29:14,228 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUsed for last 60 seconds is 16.797024
+[INFO 2018-06-29 20:29:14,229 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskAvailable for last 60 seconds is 31.594677
+[INFO 2018-06-29 20:29:14,230 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUtilization for last 60 seconds is 34.700000
+[INFO 2018-06-29 20:30:14,221 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric CPUUtilization for last 60 seconds is 0.000000
+[INFO 2018-06-29 20:30:14,225 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUsed for last 60 seconds is 1979.526693
+[INFO 2018-06-29 20:30:14,226 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUtilization for last 60 seconds is 0.500000
+[INFO 2018-06-29 20:30:14,227 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryAvailable for last 60 seconds is 734004.133789
+[INFO 2018-06-29 20:30:14,228 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUsed for last 60 seconds is 16.797024
+[INFO 2018-06-29 20:30:14,229 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskAvailable for last 60 seconds is 31.594677
+[INFO 2018-06-29 20:30:14,230 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUtilization for last 60 seconds is 34.700000
+[INFO 2018-06-29 20:31:14,222 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric CPUUtilization for last 60 seconds is 0.000000
+[INFO 2018-06-29 20:31:14,226 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUsed for last 60 seconds is 1979.333008
+[INFO 2018-06-29 20:31:14,227 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUtilization for last 60 seconds is 0.500000
+[INFO 2018-06-29 20:31:14,228 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryAvailable for last 60 seconds is 734004.327148
+[INFO 2018-06-29 20:31:14,229 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUsed for last 60 seconds is 16.797024
+[INFO 2018-06-29 20:31:14,230 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskAvailable for last 60 seconds is 31.594677
+[INFO 2018-06-29 20:31:14,231 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUtilization for last 60 seconds is 34.700000
+[INFO 2018-06-29 20:32:14,222 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric CPUUtilization for last 60 seconds is 0.000000
+[INFO 2018-06-29 20:32:14,226 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUsed for last 60 seconds is 1976.943034
+[INFO 2018-06-29 20:32:14,227 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUtilization for last 60 seconds is 0.500000
+[INFO 2018-06-29 20:32:14,228 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryAvailable for last 60 seconds is 734006.717122
+[INFO 2018-06-29 20:32:14,229 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUsed for last 60 seconds is 16.797028
+[INFO 2018-06-29 20:32:14,230 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskAvailable for last 60 seconds is 31.594673
+[INFO 2018-06-29 20:32:14,231 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUtilization for last 60 seconds is 34.700000
+[INFO 2018-06-29 20:33:14,223 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric CPUUtilization for last 60 seconds is 0.000000
+[INFO 2018-06-29 20:33:14,227 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUsed for last 60 seconds is 1975.968099
+[INFO 2018-06-29 20:33:14,228 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUtilization for last 60 seconds is 0.500000
+[INFO 2018-06-29 20:33:14,229 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryAvailable for last 60 seconds is 734007.692057
+[INFO 2018-06-29 20:33:14,230 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUsed for last 60 seconds is 16.797028
+[INFO 2018-06-29 20:33:14,231 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskAvailable for last 60 seconds is 31.594673
+[INFO 2018-06-29 20:33:14,232 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUtilization for last 60 seconds is 34.700000
+[INFO 2018-06-29 20:34:14,223 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric CPUUtilization for last 60 seconds is 0.000000
+[INFO 2018-06-29 20:34:14,227 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUsed for last 60 seconds is 1975.566406
+[INFO 2018-06-29 20:34:14,228 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUtilization for last 60 seconds is 0.500000
+[INFO 2018-06-29 20:34:14,229 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryAvailable for last 60 seconds is 734008.093750
+[INFO 2018-06-29 20:34:14,230 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUsed for last 60 seconds is 16.797028
+[INFO 2018-06-29 20:34:14,231 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskAvailable for last 60 seconds is 31.594673
+[INFO 2018-06-29 20:34:14,232 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUtilization for last 60 seconds is 34.700000
+[INFO 2018-06-29 20:35:14,224 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric CPUUtilization for last 60 seconds is 0.000000
+[INFO 2018-06-29 20:35:14,228 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUsed for last 60 seconds is 1975.225911
+[INFO 2018-06-29 20:35:14,229 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUtilization for last 60 seconds is 0.500000
+[INFO 2018-06-29 20:35:14,230 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryAvailable for last 60 seconds is 734008.427083
+[INFO 2018-06-29 20:35:14,231 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUsed for last 60 seconds is 16.797028
+[INFO 2018-06-29 20:35:14,232 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskAvailable for last 60 seconds is 31.594673
+[INFO 2018-06-29 20:35:14,233 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUtilization for last 60 seconds is 34.700000
+[INFO 2018-06-29 20:36:14,224 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric CPUUtilization for last 60 seconds is 0.000000
+[INFO 2018-06-29 20:36:14,228 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUsed for last 60 seconds is 1978.996419
+[INFO 2018-06-29 20:36:14,229 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUtilization for last 60 seconds is 0.500000
+[INFO 2018-06-29 20:36:14,230 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryAvailable for last 60 seconds is 734004.612305
+[INFO 2018-06-29 20:36:14,231 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUsed for last 60 seconds is 16.797031
+[INFO 2018-06-29 20:36:14,232 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskAvailable for last 60 seconds is 31.594669
+[INFO 2018-06-29 20:36:14,233 PID:34097 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUtilization for last 60 seconds is 34.700000
+[INFO 2018-06-29 20:36:37,860 PID:37282 /usr/local/lib/python3.5/dist-packages/mms/mxnet_model_server.py:__init__:94 Initialized model serving.
+[INFO 2018-06-29 20:36:37,861 PID:37282 /usr/local/lib/python3.5/dist-packages/mms/model_service/mxnet_model_service.py:__init__:97 Failed to parse epoch from param file, setting epoch to 0
+[INFO 2018-06-29 20:36:37,879 PID:37282 /usr/local/lib/python3.5/dist-packages/mms/serving_frontend.py:add_endpoint:185 Adding endpoint: smileCNN_predict to Flask
+[INFO 2018-06-29 20:36:37,880 PID:37282 /usr/local/lib/python3.5/dist-packages/mms/serving_frontend.py:add_endpoint:185 Adding endpoint: ping to Flask
+[INFO 2018-06-29 20:36:37,880 PID:37282 /usr/local/lib/python3.5/dist-packages/mms/serving_frontend.py:add_endpoint:185 Adding endpoint: api-description to Flask
+[INFO 2018-06-29 20:36:37,881 PID:37282 /usr/local/lib/python3.5/dist-packages/mms/serving_frontend.py:add_endpoint:185 Adding endpoint: root to Flask
+[INFO 2018-06-29 20:36:37,897 PID:37282 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric CPUUtilization for last 60 seconds is 24.000000
+[INFO 2018-06-29 20:36:37,899 PID:37282 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUsed for last 60 seconds is 2083.359375
+[INFO 2018-06-29 20:36:37,900 PID:37282 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryAvailable for last 60 seconds is 733900.320312
+[INFO 2018-06-29 20:36:37,901 PID:37282 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUtilization for last 60 seconds is 0.500000
+[INFO 2018-06-29 20:36:37,903 PID:37282 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUsed for last 60 seconds is 16.797100
+[INFO 2018-06-29 20:36:37,904 PID:37282 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskAvailable for last 60 seconds is 31.594601
+[INFO 2018-06-29 20:36:37,905 PID:37282 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUtilization for last 60 seconds is 34.700000
+[INFO 2018-06-29 20:36:37,905 PID:37282 /usr/local/lib/python3.5/dist-packages/mms/mxnet_model_server.py:start_model_serving:108 Service started successfully.
+[INFO 2018-06-29 20:36:37,906 PID:37282 /usr/local/lib/python3.5/dist-packages/mms/mxnet_model_server.py:start_model_serving:109 Service description endpoint: 127.0.0.1:8080/api-description
+[INFO 2018-06-29 20:36:37,906 PID:37282 /usr/local/lib/python3.5/dist-packages/mms/mxnet_model_server.py:start_model_serving:110 Service health endpoint: 127.0.0.1:8080/ping
+[INFO 2018-06-29 20:36:53,273 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/mxnet_model_server.py:__init__:94 Initialized model serving.
+[INFO 2018-06-29 20:36:53,273 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/model_service/mxnet_model_service.py:__init__:97 Failed to parse epoch from param file, setting epoch to 0
+[INFO 2018-06-29 20:36:53,294 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/serving_frontend.py:add_endpoint:185 Adding endpoint: smileCNN_predict to Flask
+[INFO 2018-06-29 20:36:53,295 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/serving_frontend.py:add_endpoint:185 Adding endpoint: ping to Flask
+[INFO 2018-06-29 20:36:53,295 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/serving_frontend.py:add_endpoint:185 Adding endpoint: api-description to Flask
+[INFO 2018-06-29 20:36:53,296 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/serving_frontend.py:add_endpoint:185 Adding endpoint: root to Flask
+[INFO 2018-06-29 20:36:53,314 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric CPUUtilization for last 60 seconds is 23.500000
+[INFO 2018-06-29 20:36:53,316 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUsed for last 60 seconds is 1983.433594
+[INFO 2018-06-29 20:36:53,318 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryAvailable for last 60 seconds is 733999.511719
+[INFO 2018-06-29 20:36:53,319 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUtilization for last 60 seconds is 0.500000
+[INFO 2018-06-29 20:36:53,320 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUsed for last 60 seconds is 16.797104
+[INFO 2018-06-29 20:36:53,321 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskAvailable for last 60 seconds is 31.594597
+[INFO 2018-06-29 20:36:53,322 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUtilization for last 60 seconds is 34.700000
+[INFO 2018-06-29 20:36:53,322 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/mxnet_model_server.py:start_model_serving:108 Service started successfully.
+[INFO 2018-06-29 20:36:53,322 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/mxnet_model_server.py:start_model_serving:109 Service description endpoint: 127.0.0.1:8080/api-description
+[INFO 2018-06-29 20:36:53,322 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/mxnet_model_server.py:start_model_serving:110 Service health endpoint: 127.0.0.1:8080/ping
+[INFO 2018-06-29 20:36:53,332 PID:37449 /usr/local/lib/python3.5/dist-packages/werkzeug/_internal.py:_log:88  * Running on http://127.0.0.1:8080/ (Press CTRL+C to quit)
+[INFO 2018-06-29 20:37:17,298 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/serving_frontend.py:predict_callback:467 Request input: /conv2d_1_input1 should be image with jpeg format.
+[INFO 2018-06-29 20:37:17,299 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/request_handler/flask_handler.py:get_file_data:137 Getting file data from request.
+[INFO 2018-06-29 20:37:17,396 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/serving_frontend.py:predict_callback:510 Response is text.
+[INFO 2018-06-29 20:37:17,396 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/request_handler/flask_handler.py:jsonify:159 Jsonifying the response: {'prediction': [[{'probability': 1.0, 'class': 'smiling'}, {'probability': 1.1223800943499054e-38, 'class': 'neutral'}]]}
+[INFO 2018-06-29 20:37:17,399 PID:37449 /usr/local/lib/python3.5/dist-packages/werkzeug/_internal.py:_log:88 127.0.0.1 - - [29/Jun/2018 20:37:17] "POST /smileCNN/predict HTTP/1.1" 200 -
+[INFO 2018-06-29 20:37:53,303 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric PredictionTotal for last 60 seconds is 1.000000
+[INFO 2018-06-29 20:37:53,311 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric LatencyOverall for last 60 seconds is 60.140371
+[INFO 2018-06-29 20:37:53,313 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric LatencyPreprocess for last 60 seconds is 1.955271
+[INFO 2018-06-29 20:37:53,314 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric LatencyInference for last 60 seconds is 41.464090
+[INFO 2018-06-29 20:37:53,315 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric LatencyPostprocess for last 60 seconds is 16.721010
+[INFO 2018-06-29 20:37:53,316 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric CPUUtilization for last 60 seconds is 0.363636
+[INFO 2018-06-29 20:37:53,317 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUsed for last 60 seconds is 1989.202060
+[INFO 2018-06-29 20:37:53,318 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryAvailable for last 60 seconds is 733994.425071
+[INFO 2018-06-29 20:37:53,319 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUtilization for last 60 seconds is 0.500000
+[INFO 2018-06-29 20:37:53,321 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUsed for last 60 seconds is 16.797106
+[INFO 2018-06-29 20:37:53,322 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskAvailable for last 60 seconds is 31.594594
+[INFO 2018-06-29 20:37:53,322 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUtilization for last 60 seconds is 34.700000
+[INFO 2018-06-29 20:38:53,315 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric CPUUtilization for last 60 seconds is 0.016667
+[INFO 2018-06-29 20:38:53,317 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUsed for last 60 seconds is 1989.149414
+[INFO 2018-06-29 20:38:53,319 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryAvailable for last 60 seconds is 733994.474609
+[INFO 2018-06-29 20:38:53,320 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUtilization for last 60 seconds is 0.500000
+[INFO 2018-06-29 20:38:53,321 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUsed for last 60 seconds is 16.797108
+[INFO 2018-06-29 20:38:53,322 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskAvailable for last 60 seconds is 31.594593
+[INFO 2018-06-29 20:38:53,323 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUtilization for last 60 seconds is 34.700000
+[INFO 2018-06-29 20:39:24,828 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/serving_frontend.py:predict_callback:467 Request input: /conv2d_1_input1 should be image with jpeg format.
+[INFO 2018-06-29 20:39:24,828 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/request_handler/flask_handler.py:get_file_data:137 Getting file data from request.
+[INFO 2018-06-29 20:39:24,890 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/serving_frontend.py:predict_callback:510 Response is text.
+[INFO 2018-06-29 20:39:24,890 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/request_handler/flask_handler.py:jsonify:159 Jsonifying the response: {'prediction': [[{'probability': 1.0, 'class': 'neutral'}, {'probability': 3.250289353594901e-25, 'class': 'smiling'}]]}
+[INFO 2018-06-29 20:39:24,892 PID:37449 /usr/local/lib/python3.5/dist-packages/werkzeug/_internal.py:_log:88 127.0.0.1 - - [29/Jun/2018 20:39:24] "POST /smileCNN/predict HTTP/1.1" 200 -
+[INFO 2018-06-29 20:39:38,293 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/serving_frontend.py:predict_callback:467 Request input: /conv2d_1_input1 should be image with jpeg format.
+[INFO 2018-06-29 20:39:38,294 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/request_handler/flask_handler.py:get_file_data:137 Getting file data from request.
+[INFO 2018-06-29 20:39:38,349 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/serving_frontend.py:predict_callback:510 Response is text.
+[INFO 2018-06-29 20:39:38,349 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/request_handler/flask_handler.py:jsonify:159 Jsonifying the response: {'prediction': [[{'probability': 1.0, 'class': 'neutral'}, {'probability': 3.8900731530045903e-32, 'class': 'smiling'}]]}
+[INFO 2018-06-29 20:39:38,350 PID:37449 /usr/local/lib/python3.5/dist-packages/werkzeug/_internal.py:_log:88 127.0.0.1 - - [29/Jun/2018 20:39:38] "POST /smileCNN/predict HTTP/1.1" 200 -
+[INFO 2018-06-29 20:39:53,304 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric PredictionTotal for last 60 seconds is 2.000000
+[INFO 2018-06-29 20:39:53,312 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric LatencyOverall for last 60 seconds is 19.698024
+[INFO 2018-06-29 20:39:53,313 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric LatencyPreprocess for last 60 seconds is 1.129508
+[INFO 2018-06-29 20:39:53,315 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric LatencyInference for last 60 seconds is 6.227016
+[INFO 2018-06-29 20:39:53,316 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric LatencyPostprocess for last 60 seconds is 12.341499
+[INFO 2018-06-29 20:39:53,317 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric CPUUtilization for last 60 seconds is 0.341667
+[INFO 2018-06-29 20:39:53,318 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUsed for last 60 seconds is 1996.081380
+[INFO 2018-06-29 20:39:53,319 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryAvailable for last 60 seconds is 733987.624023
+[INFO 2018-06-29 20:39:53,320 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUtilization for last 60 seconds is 0.500000
+[INFO 2018-06-29 20:39:53,322 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUsed for last 60 seconds is 16.797116
+[INFO 2018-06-29 20:39:53,322 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskAvailable for last 60 seconds is 31.594585
+[INFO 2018-06-29 20:39:53,323 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUtilization for last 60 seconds is 34.700000
+[INFO 2018-06-29 20:40:53,317 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric CPUUtilization for last 60 seconds is 0.000000
+[INFO 2018-06-29 20:40:53,318 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUsed for last 60 seconds is 1997.306966
+[INFO 2018-06-29 20:40:53,320 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryAvailable for last 60 seconds is 733986.314779
+[INFO 2018-06-29 20:40:53,321 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUtilization for last 60 seconds is 0.500000
+[INFO 2018-06-29 20:40:53,322 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUsed for last 60 seconds is 16.797119
+[INFO 2018-06-29 20:40:53,323 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskAvailable for last 60 seconds is 31.594582
+[INFO 2018-06-29 20:40:53,324 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUtilization for last 60 seconds is 34.700000
+[INFO 2018-06-29 20:41:53,317 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric CPUUtilization for last 60 seconds is 0.000000
+[INFO 2018-06-29 20:41:53,319 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUsed for last 60 seconds is 1996.697917
+[INFO 2018-06-29 20:41:53,320 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryAvailable for last 60 seconds is 733986.921224
+[INFO 2018-06-29 20:41:53,321 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUtilization for last 60 seconds is 0.500000
+[INFO 2018-06-29 20:41:53,323 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUsed for last 60 seconds is 16.797123
+[INFO 2018-06-29 20:41:53,324 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskAvailable for last 60 seconds is 31.594578
+[INFO 2018-06-29 20:41:53,324 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUtilization for last 60 seconds is 34.700000
+[INFO 2018-06-29 20:42:53,318 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric CPUUtilization for last 60 seconds is 0.000000
+[INFO 2018-06-29 20:42:53,319 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUsed for last 60 seconds is 1996.450846
+[INFO 2018-06-29 20:42:53,321 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryAvailable for last 60 seconds is 733987.169271
+[INFO 2018-06-29 20:42:53,322 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUtilization for last 60 seconds is 0.500000
+[INFO 2018-06-29 20:42:53,323 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUsed for last 60 seconds is 16.797123
+[INFO 2018-06-29 20:42:53,324 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskAvailable for last 60 seconds is 31.594578
+[INFO 2018-06-29 20:42:53,325 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUtilization for last 60 seconds is 34.700000
+[INFO 2018-06-29 20:43:53,318 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric CPUUtilization for last 60 seconds is 0.000000
+[INFO 2018-06-29 20:43:53,320 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUsed for last 60 seconds is 1996.501628
+[INFO 2018-06-29 20:43:53,321 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryAvailable for last 60 seconds is 733987.118815
+[INFO 2018-06-29 20:43:53,322 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUtilization for last 60 seconds is 0.500000
+[INFO 2018-06-29 20:43:53,324 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUsed for last 60 seconds is 16.797123
+[INFO 2018-06-29 20:43:53,324 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskAvailable for last 60 seconds is 31.594578
+[INFO 2018-06-29 20:43:53,325 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUtilization for last 60 seconds is 34.700000
+[INFO 2018-06-29 20:44:53,319 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric CPUUtilization for last 60 seconds is 0.000000
+[INFO 2018-06-29 20:44:53,320 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUsed for last 60 seconds is 1997.604492
+[INFO 2018-06-29 20:44:53,322 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryAvailable for last 60 seconds is 733986.010417
+[INFO 2018-06-29 20:44:53,323 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUtilization for last 60 seconds is 0.500000
+[INFO 2018-06-29 20:44:53,324 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUsed for last 60 seconds is 16.797126
+[INFO 2018-06-29 20:44:53,325 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskAvailable for last 60 seconds is 31.594575
+[INFO 2018-06-29 20:44:53,326 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUtilization for last 60 seconds is 34.700000
+[INFO 2018-06-29 20:45:53,319 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric CPUUtilization for last 60 seconds is 0.000000
+[INFO 2018-06-29 20:45:53,321 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUsed for last 60 seconds is 1997.423177
+[INFO 2018-06-29 20:45:53,322 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryAvailable for last 60 seconds is 733986.196940
+[INFO 2018-06-29 20:45:53,323 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUtilization for last 60 seconds is 0.500000
+[INFO 2018-06-29 20:45:53,325 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUsed for last 60 seconds is 16.797131
+[INFO 2018-06-29 20:45:53,325 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskAvailable for last 60 seconds is 31.594570
+[INFO 2018-06-29 20:45:53,326 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUtilization for last 60 seconds is 34.700000
+[INFO 2018-06-29 20:46:53,320 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric CPUUtilization for last 60 seconds is 0.000000
+[INFO 2018-06-29 20:46:53,321 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUsed for last 60 seconds is 1996.980469
+[INFO 2018-06-29 20:46:53,323 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryAvailable for last 60 seconds is 733986.640625
+[INFO 2018-06-29 20:46:53,324 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUtilization for last 60 seconds is 0.500000
+[INFO 2018-06-29 20:46:53,325 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUsed for last 60 seconds is 16.797131
+[INFO 2018-06-29 20:46:53,326 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskAvailable for last 60 seconds is 31.594570
+[INFO 2018-06-29 20:46:53,327 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUtilization for last 60 seconds is 34.700000
+[INFO 2018-06-29 20:47:53,320 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric CPUUtilization for last 60 seconds is 0.000000
+[INFO 2018-06-29 20:47:53,322 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUsed for last 60 seconds is 1996.933594
+[INFO 2018-06-29 20:47:53,323 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryAvailable for last 60 seconds is 733986.687500
+[INFO 2018-06-29 20:47:53,324 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUtilization for last 60 seconds is 0.500000
+[INFO 2018-06-29 20:47:53,326 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUsed for last 60 seconds is 16.797131
+[INFO 2018-06-29 20:47:53,326 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskAvailable for last 60 seconds is 31.594570
+[INFO 2018-06-29 20:47:53,327 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUtilization for last 60 seconds is 34.700000
+[INFO 2018-06-29 20:48:53,321 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric CPUUtilization for last 60 seconds is 0.000000
+[INFO 2018-06-29 20:48:53,322 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUsed for last 60 seconds is 1998.099284
+[INFO 2018-06-29 20:48:53,324 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryAvailable for last 60 seconds is 733985.520508
+[INFO 2018-06-29 20:48:53,325 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUtilization for last 60 seconds is 0.500000
+[INFO 2018-06-29 20:48:53,326 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUsed for last 60 seconds is 16.797134
+[INFO 2018-06-29 20:48:53,327 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskAvailable for last 60 seconds is 31.594566
+[INFO 2018-06-29 20:48:53,328 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUtilization for last 60 seconds is 34.700000
+[INFO 2018-06-29 20:49:53,321 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric CPUUtilization for last 60 seconds is 0.000000
+[INFO 2018-06-29 20:49:53,323 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUsed for last 60 seconds is 1998.822266
+[INFO 2018-06-29 20:49:53,324 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryAvailable for last 60 seconds is 733984.796224
+[INFO 2018-06-29 20:49:53,325 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUtilization for last 60 seconds is 0.500000
+[INFO 2018-06-29 20:49:53,327 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUsed for last 60 seconds is 16.797134
+[INFO 2018-06-29 20:49:53,328 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskAvailable for last 60 seconds is 31.594566
+[INFO 2018-06-29 20:49:53,328 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUtilization for last 60 seconds is 34.700000
+[INFO 2018-06-29 20:50:53,322 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric CPUUtilization for last 60 seconds is 0.000000
+[INFO 2018-06-29 20:50:53,323 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUsed for last 60 seconds is 1997.875651
+[INFO 2018-06-29 20:50:53,325 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryAvailable for last 60 seconds is 733985.742188
+[INFO 2018-06-29 20:50:53,326 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUtilization for last 60 seconds is 0.500000
+[INFO 2018-06-29 20:50:53,327 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUsed for last 60 seconds is 16.797134
+[INFO 2018-06-29 20:50:53,328 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskAvailable for last 60 seconds is 31.594566
+[INFO 2018-06-29 20:50:53,329 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUtilization for last 60 seconds is 34.700000
+[INFO 2018-06-29 20:51:10,966 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/serving_frontend.py:predict_callback:467 Request input: /conv2d_1_input1 should be image with jpeg format.
+[INFO 2018-06-29 20:51:10,967 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/request_handler/flask_handler.py:get_file_data:137 Getting file data from request.
+[INFO 2018-06-29 20:51:11,016 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/serving_frontend.py:predict_callback:510 Response is text.
+[INFO 2018-06-29 20:51:11,016 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/request_handler/flask_handler.py:jsonify:159 Jsonifying the response: {'prediction': [[{'probability': 1.0, 'class': 'smiling'}, {'probability': 1.1223800943499054e-38, 'class': 'neutral'}]]}
+[INFO 2018-06-29 20:51:11,017 PID:37449 /usr/local/lib/python3.5/dist-packages/werkzeug/_internal.py:_log:88 127.0.0.1 - - [29/Jun/2018 20:51:11] "POST /smileCNN/predict HTTP/1.1" 200 -
+[INFO 2018-06-29 20:51:53,311 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric PredictionTotal for last 60 seconds is 1.000000
+[INFO 2018-06-29 20:51:53,317 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric LatencyOverall for last 60 seconds is 12.088060
+[INFO 2018-06-29 20:51:53,319 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric LatencyPreprocess for last 60 seconds is 1.106262
+[INFO 2018-06-29 20:51:53,320 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric LatencyInference for last 60 seconds is 2.490520
+[INFO 2018-06-29 20:51:53,322 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric LatencyPostprocess for last 60 seconds is 8.491278
+[INFO 2018-06-29 20:51:53,323 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric CPUUtilization for last 60 seconds is 0.141667
+[INFO 2018-06-29 20:51:53,324 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUsed for last 60 seconds is 2002.701172
+[INFO 2018-06-29 20:51:53,325 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryAvailable for last 60 seconds is 733980.889323
+[INFO 2018-06-29 20:51:53,326 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUtilization for last 60 seconds is 0.500000
+[INFO 2018-06-29 20:51:53,328 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUsed for last 60 seconds is 16.797137
+[INFO 2018-06-29 20:51:53,329 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskAvailable for last 60 seconds is 31.594564
+[INFO 2018-06-29 20:51:53,329 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUtilization for last 60 seconds is 34.700000
+[INFO 2018-06-29 20:52:53,323 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric CPUUtilization for last 60 seconds is 0.000000
+[INFO 2018-06-29 20:52:53,324 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUsed for last 60 seconds is 2001.797201
+[INFO 2018-06-29 20:52:53,326 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryAvailable for last 60 seconds is 733981.794922
+[INFO 2018-06-29 20:52:53,327 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUtilization for last 60 seconds is 0.500000
+[INFO 2018-06-29 20:52:53,328 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUsed for last 60 seconds is 16.797138
+[INFO 2018-06-29 20:52:53,329 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskAvailable for last 60 seconds is 31.594563
+[INFO 2018-06-29 20:52:53,330 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUtilization for last 60 seconds is 34.700000
+[INFO 2018-06-29 20:53:53,324 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric CPUUtilization for last 60 seconds is 0.000000
+[INFO 2018-06-29 20:53:53,325 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUsed for last 60 seconds is 2001.347331
+[INFO 2018-06-29 20:53:53,326 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryAvailable for last 60 seconds is 733982.241211
+[INFO 2018-06-29 20:53:53,327 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUtilization for last 60 seconds is 0.500000
+[INFO 2018-06-29 20:53:53,329 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUsed for last 60 seconds is 16.797138
+[INFO 2018-06-29 20:53:53,330 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskAvailable for last 60 seconds is 31.594563
+[INFO 2018-06-29 20:53:53,330 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUtilization for last 60 seconds is 34.700000
+[INFO 2018-06-29 20:54:53,324 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric CPUUtilization for last 60 seconds is 0.000000
+[INFO 2018-06-29 20:54:53,325 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUsed for last 60 seconds is 2000.779948
+[INFO 2018-06-29 20:54:53,327 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryAvailable for last 60 seconds is 733982.808594
+[INFO 2018-06-29 20:54:53,328 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUtilization for last 60 seconds is 0.500000
+[INFO 2018-06-29 20:54:53,329 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUsed for last 60 seconds is 16.797142
+[INFO 2018-06-29 20:54:53,330 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskAvailable for last 60 seconds is 31.594559
+[INFO 2018-06-29 20:54:53,331 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUtilization for last 60 seconds is 34.700000
+[INFO 2018-06-29 20:55:53,325 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric CPUUtilization for last 60 seconds is 0.000000
+[INFO 2018-06-29 20:55:53,326 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUsed for last 60 seconds is 2000.271810
+[INFO 2018-06-29 20:55:53,327 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryAvailable for last 60 seconds is 733983.314453
+[INFO 2018-06-29 20:55:53,328 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUtilization for last 60 seconds is 0.500000
+[INFO 2018-06-29 20:55:53,330 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUsed for last 60 seconds is 16.797142
+[INFO 2018-06-29 20:55:53,331 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskAvailable for last 60 seconds is 31.594559
+[INFO 2018-06-29 20:55:53,332 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUtilization for last 60 seconds is 34.700000
+[INFO 2018-06-29 20:56:53,325 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric CPUUtilization for last 60 seconds is 0.000000
+[INFO 2018-06-29 20:56:53,326 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUsed for last 60 seconds is 2000.720052
+[INFO 2018-06-29 20:56:53,328 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryAvailable for last 60 seconds is 733982.868490
+[INFO 2018-06-29 20:56:53,329 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUtilization for last 60 seconds is 0.500000
+[INFO 2018-06-29 20:56:53,330 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUsed for last 60 seconds is 16.797142
+[INFO 2018-06-29 20:56:53,331 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskAvailable for last 60 seconds is 31.594559
+[INFO 2018-06-29 20:56:53,332 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUtilization for last 60 seconds is 34.700000
+[INFO 2018-06-29 20:57:53,326 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric CPUUtilization for last 60 seconds is 0.000000
+[INFO 2018-06-29 20:57:53,327 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUsed for last 60 seconds is 2001.392253
+[INFO 2018-06-29 20:57:53,328 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryAvailable for last 60 seconds is 733982.195638
+[INFO 2018-06-29 20:57:53,329 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUtilization for last 60 seconds is 0.500000
+[INFO 2018-06-29 20:57:53,331 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUsed for last 60 seconds is 16.797146
+[INFO 2018-06-29 20:57:53,331 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskAvailable for last 60 seconds is 31.594555
+[INFO 2018-06-29 20:57:53,333 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUtilization for last 60 seconds is 34.700000
+[INFO 2018-06-29 20:58:53,326 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric CPUUtilization for last 60 seconds is 0.000000
+[INFO 2018-06-29 20:58:53,327 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUsed for last 60 seconds is 2004.477539
+[INFO 2018-06-29 20:58:53,329 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryAvailable for last 60 seconds is 733979.112305
+[INFO 2018-06-29 20:58:53,330 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUtilization for last 60 seconds is 0.500000
+[INFO 2018-06-29 20:58:53,331 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUsed for last 60 seconds is 16.797146
+[INFO 2018-06-29 20:58:53,332 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskAvailable for last 60 seconds is 31.594555
+[INFO 2018-06-29 20:58:53,333 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUtilization for last 60 seconds is 34.700000
+[INFO 2018-06-29 20:59:53,327 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric CPUUtilization for last 60 seconds is 0.000000
+[INFO 2018-06-29 20:59:53,328 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUsed for last 60 seconds is 2004.918294
+[INFO 2018-06-29 20:59:53,329 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryAvailable for last 60 seconds is 733978.671549
+[INFO 2018-06-29 20:59:53,330 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUtilization for last 60 seconds is 0.500000
+[INFO 2018-06-29 20:59:53,332 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUsed for last 60 seconds is 16.797146
+[INFO 2018-06-29 20:59:53,332 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskAvailable for last 60 seconds is 31.594555
+[INFO 2018-06-29 20:59:53,333 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUtilization for last 60 seconds is 34.700000
+[INFO 2018-06-29 21:00:53,327 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric CPUUtilization for last 60 seconds is 0.000000
+[INFO 2018-06-29 21:00:53,328 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUsed for last 60 seconds is 2004.875326
+[INFO 2018-06-29 21:00:53,330 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryAvailable for last 60 seconds is 733978.714518
+[INFO 2018-06-29 21:00:53,331 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUtilization for last 60 seconds is 0.500000
+[INFO 2018-06-29 21:00:53,332 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUsed for last 60 seconds is 16.797146
+[INFO 2018-06-29 21:00:53,333 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskAvailable for last 60 seconds is 31.594555
+[INFO 2018-06-29 21:00:53,334 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUtilization for last 60 seconds is 34.700000
+[INFO 2018-06-29 21:01:53,328 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric CPUUtilization for last 60 seconds is 0.000000
+[INFO 2018-06-29 21:01:53,329 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUsed for last 60 seconds is 2004.865885
+[INFO 2018-06-29 21:01:53,330 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryAvailable for last 60 seconds is 733978.723958
+[INFO 2018-06-29 21:01:53,331 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUtilization for last 60 seconds is 0.500000
+[INFO 2018-06-29 21:01:53,333 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUsed for last 60 seconds is 16.797150
+[INFO 2018-06-29 21:01:53,333 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskAvailable for last 60 seconds is 31.594551
+[INFO 2018-06-29 21:01:53,334 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUtilization for last 60 seconds is 34.700000
+[INFO 2018-06-29 21:02:53,328 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric CPUUtilization for last 60 seconds is 0.000000
+[INFO 2018-06-29 21:02:53,329 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUsed for last 60 seconds is 2004.917643
+[INFO 2018-06-29 21:02:53,331 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryAvailable for last 60 seconds is 733978.672201
+[INFO 2018-06-29 21:02:53,332 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUtilization for last 60 seconds is 0.500000
+[INFO 2018-06-29 21:02:53,333 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUsed for last 60 seconds is 16.797150
+[INFO 2018-06-29 21:02:53,334 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskAvailable for last 60 seconds is 31.594551
+[INFO 2018-06-29 21:02:53,335 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUtilization for last 60 seconds is 34.700000
+[INFO 2018-06-29 21:03:53,328 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric CPUUtilization for last 60 seconds is 0.000000
+[INFO 2018-06-29 21:03:53,330 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUsed for last 60 seconds is 2005.017904
+[INFO 2018-06-29 21:03:53,331 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryAvailable for last 60 seconds is 733978.570638
+[INFO 2018-06-29 21:03:53,332 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUtilization for last 60 seconds is 0.500000
+[INFO 2018-06-29 21:03:53,333 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUsed for last 60 seconds is 16.797150
+[INFO 2018-06-29 21:03:53,334 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskAvailable for last 60 seconds is 31.594551
+[INFO 2018-06-29 21:03:53,335 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUtilization for last 60 seconds is 34.700000
+[INFO 2018-06-29 21:04:53,329 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric CPUUtilization for last 60 seconds is 0.000000
+[INFO 2018-06-29 21:04:53,330 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUsed for last 60 seconds is 2004.883138
+[INFO 2018-06-29 21:04:53,331 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryAvailable for last 60 seconds is 733978.706706
+[INFO 2018-06-29 21:04:53,333 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUtilization for last 60 seconds is 0.500000
+[INFO 2018-06-29 21:04:53,334 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUsed for last 60 seconds is 16.797153
+[INFO 2018-06-29 21:04:53,335 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskAvailable for last 60 seconds is 31.594547
+[INFO 2018-06-29 21:04:53,336 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUtilization for last 60 seconds is 34.700000
+[INFO 2018-06-29 21:05:53,329 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric CPUUtilization for last 60 seconds is 0.000000
+[INFO 2018-06-29 21:05:53,331 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUsed for last 60 seconds is 2004.828125
+[INFO 2018-06-29 21:05:53,332 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryAvailable for last 60 seconds is 733978.761393
+[INFO 2018-06-29 21:05:53,333 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUtilization for last 60 seconds is 0.500000
+[INFO 2018-06-29 21:05:53,334 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUsed for last 60 seconds is 16.797153
+[INFO 2018-06-29 21:05:53,335 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskAvailable for last 60 seconds is 31.594547
+[INFO 2018-06-29 21:05:53,336 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUtilization for last 60 seconds is 34.700000
+[INFO 2018-06-29 21:06:53,330 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric CPUUtilization for last 60 seconds is 0.000000
+[INFO 2018-06-29 21:06:53,331 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUsed for last 60 seconds is 2005.303385
+[INFO 2018-06-29 21:06:53,332 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryAvailable for last 60 seconds is 733978.285156
+[INFO 2018-06-29 21:06:53,334 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUtilization for last 60 seconds is 0.500000
+[INFO 2018-06-29 21:06:53,335 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUsed for last 60 seconds is 16.797153
+[INFO 2018-06-29 21:06:53,336 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskAvailable for last 60 seconds is 31.594547
+[INFO 2018-06-29 21:06:53,337 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUtilization for last 60 seconds is 34.700000
+[INFO 2018-06-29 21:07:53,330 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric CPUUtilization for last 60 seconds is 0.000000
+[INFO 2018-06-29 21:07:53,332 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUsed for last 60 seconds is 2005.200846
+[INFO 2018-06-29 21:07:53,333 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryAvailable for last 60 seconds is 733978.389323
+[INFO 2018-06-29 21:07:53,334 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUtilization for last 60 seconds is 0.500000
+[INFO 2018-06-29 21:07:53,335 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUsed for last 60 seconds is 16.797153
+[INFO 2018-06-29 21:07:53,336 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskAvailable for last 60 seconds is 31.594547
+[INFO 2018-06-29 21:07:53,337 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUtilization for last 60 seconds is 34.700000
+[INFO 2018-06-29 21:08:53,331 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric CPUUtilization for last 60 seconds is 0.000000
+[INFO 2018-06-29 21:08:53,332 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUsed for last 60 seconds is 2004.656576
+[INFO 2018-06-29 21:08:53,333 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryAvailable for last 60 seconds is 733978.931315
+[INFO 2018-06-29 21:08:53,335 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUtilization for last 60 seconds is 0.500000
+[INFO 2018-06-29 21:08:53,336 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUsed for last 60 seconds is 16.797157
+[INFO 2018-06-29 21:08:53,337 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskAvailable for last 60 seconds is 31.594543
+[INFO 2018-06-29 21:08:53,338 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUtilization for last 60 seconds is 34.700000
+[INFO 2018-06-29 21:09:53,331 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric CPUUtilization for last 60 seconds is 0.000000
+[INFO 2018-06-29 21:09:53,333 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUsed for last 60 seconds is 2004.578776
+[INFO 2018-06-29 21:09:53,334 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryAvailable for last 60 seconds is 733979.009766
+[INFO 2018-06-29 21:09:53,335 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUtilization for last 60 seconds is 0.500000
+[INFO 2018-06-29 21:09:53,336 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUsed for last 60 seconds is 16.797157
+[INFO 2018-06-29 21:09:53,338 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskAvailable for last 60 seconds is 31.594543
+[INFO 2018-06-29 21:09:53,338 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUtilization for last 60 seconds is 34.700000
+[INFO 2018-06-29 21:10:53,332 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric CPUUtilization for last 60 seconds is 0.000000
+[INFO 2018-06-29 21:10:53,333 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUsed for last 60 seconds is 2004.576172
+[INFO 2018-06-29 21:10:53,334 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryAvailable for last 60 seconds is 733979.012044
+[INFO 2018-06-29 21:10:53,336 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUtilization for last 60 seconds is 0.500000
+[INFO 2018-06-29 21:10:53,337 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUsed for last 60 seconds is 16.797157
+[INFO 2018-06-29 21:10:53,338 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskAvailable for last 60 seconds is 31.594543
+[INFO 2018-06-29 21:10:53,339 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUtilization for last 60 seconds is 34.700000
+[INFO 2018-06-29 21:11:53,332 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric CPUUtilization for last 60 seconds is 0.000000
+[INFO 2018-06-29 21:11:53,334 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUsed for last 60 seconds is 2004.630859
+[INFO 2018-06-29 21:11:53,335 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryAvailable for last 60 seconds is 733978.958659
+[INFO 2018-06-29 21:11:53,336 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUtilization for last 60 seconds is 0.500000
+[INFO 2018-06-29 21:11:53,337 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUsed for last 60 seconds is 16.797161
+[INFO 2018-06-29 21:11:53,338 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskAvailable for last 60 seconds is 31.594540
+[INFO 2018-06-29 21:11:53,339 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUtilization for last 60 seconds is 34.700000
+[INFO 2018-06-29 21:12:53,333 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric CPUUtilization for last 60 seconds is 0.000000
+[INFO 2018-06-29 21:12:53,334 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUsed for last 60 seconds is 2004.353516
+[INFO 2018-06-29 21:12:53,335 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryAvailable for last 60 seconds is 733979.239583
+[INFO 2018-06-29 21:12:53,337 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUtilization for last 60 seconds is 0.500000
+[INFO 2018-06-29 21:12:53,338 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUsed for last 60 seconds is 16.797161
+[INFO 2018-06-29 21:12:53,339 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskAvailable for last 60 seconds is 31.594540
+[INFO 2018-06-29 21:12:53,340 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUtilization for last 60 seconds is 34.700000
+[INFO 2018-06-29 21:13:53,333 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric CPUUtilization for last 60 seconds is 0.000000
+[INFO 2018-06-29 21:13:53,335 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUsed for last 60 seconds is 2004.295247
+[INFO 2018-06-29 21:13:53,336 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryAvailable for last 60 seconds is 733979.298177
+[INFO 2018-06-29 21:13:53,337 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUtilization for last 60 seconds is 0.500000
+[INFO 2018-06-29 21:13:53,338 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUsed for last 60 seconds is 16.797161
+[INFO 2018-06-29 21:13:53,339 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskAvailable for last 60 seconds is 31.594540
+[INFO 2018-06-29 21:13:53,340 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUtilization for last 60 seconds is 34.700000
+[INFO 2018-06-29 21:14:53,334 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric CPUUtilization for last 60 seconds is 0.000000
+[INFO 2018-06-29 21:14:53,335 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUsed for last 60 seconds is 1999.798503
+[INFO 2018-06-29 21:14:53,336 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryAvailable for last 60 seconds is 733983.835612
+[INFO 2018-06-29 21:14:53,337 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUtilization for last 60 seconds is 0.500000
+[INFO 2018-06-29 21:14:53,339 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUsed for last 60 seconds is 16.797164
+[INFO 2018-06-29 21:14:53,340 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskAvailable for last 60 seconds is 31.594536
+[INFO 2018-06-29 21:14:53,341 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUtilization for last 60 seconds is 34.700000
+[INFO 2018-06-29 21:15:53,334 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric CPUUtilization for last 60 seconds is 0.000000
+[INFO 2018-06-29 21:15:53,336 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUsed for last 60 seconds is 1993.932617
+[INFO 2018-06-29 21:15:53,337 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryAvailable for last 60 seconds is 733989.745443
+[INFO 2018-06-29 21:15:53,338 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUtilization for last 60 seconds is 0.500000
+[INFO 2018-06-29 21:15:53,339 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUsed for last 60 seconds is 16.797161
+[INFO 2018-06-29 21:15:53,340 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskAvailable for last 60 seconds is 31.594540
+[INFO 2018-06-29 21:15:53,341 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUtilization for last 60 seconds is 34.700000
+[INFO 2018-06-29 21:16:53,335 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric CPUUtilization for last 60 seconds is 0.000000
+[INFO 2018-06-29 21:16:53,336 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUsed for last 60 seconds is 1997.022135
+[INFO 2018-06-29 21:16:53,337 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryAvailable for last 60 seconds is 733986.655924
+[INFO 2018-06-29 21:16:53,338 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUtilization for last 60 seconds is 0.500000
+[INFO 2018-06-29 21:16:53,340 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUsed for last 60 seconds is 16.797161
+[INFO 2018-06-29 21:16:53,341 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskAvailable for last 60 seconds is 31.594540
+[INFO 2018-06-29 21:16:53,342 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUtilization for last 60 seconds is 34.700000
+[INFO 2018-06-29 21:17:53,335 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric CPUUtilization for last 60 seconds is 0.000000
+[INFO 2018-06-29 21:17:53,337 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUsed for last 60 seconds is 1995.748698
+[INFO 2018-06-29 21:17:53,338 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryAvailable for last 60 seconds is 733987.926107
+[INFO 2018-06-29 21:17:53,339 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUtilization for last 60 seconds is 0.500000
+[INFO 2018-06-29 21:17:53,340 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUsed for last 60 seconds is 16.797161
+[INFO 2018-06-29 21:17:53,341 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskAvailable for last 60 seconds is 31.594540
+[INFO 2018-06-29 21:17:53,342 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUtilization for last 60 seconds is 34.700000
+[INFO 2018-06-29 21:18:53,336 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric CPUUtilization for last 60 seconds is 0.000000
+[INFO 2018-06-29 21:18:53,337 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUsed for last 60 seconds is 1995.380534
+[INFO 2018-06-29 21:18:53,338 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryAvailable for last 60 seconds is 733988.290690
+[INFO 2018-06-29 21:18:53,339 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUtilization for last 60 seconds is 0.500000
+[INFO 2018-06-29 21:18:53,341 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUsed for last 60 seconds is 16.797165
+[INFO 2018-06-29 21:18:53,342 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskAvailable for last 60 seconds is 31.594536
+[INFO 2018-06-29 21:18:53,343 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUtilization for last 60 seconds is 34.700000
+[INFO 2018-06-29 21:19:53,336 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric CPUUtilization for last 60 seconds is 0.000000
+[INFO 2018-06-29 21:19:53,338 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUsed for last 60 seconds is 1995.055990
+[INFO 2018-06-29 21:19:53,339 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryAvailable for last 60 seconds is 733988.612305
+[INFO 2018-06-29 21:19:53,340 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUtilization for last 60 seconds is 0.500000
+[INFO 2018-06-29 21:19:53,341 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUsed for last 60 seconds is 16.797165
+[INFO 2018-06-29 21:19:53,342 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskAvailable for last 60 seconds is 31.594536
+[INFO 2018-06-29 21:19:53,343 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUtilization for last 60 seconds is 34.700000
+[INFO 2018-06-29 21:20:53,336 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric CPUUtilization for last 60 seconds is 0.000000
+[INFO 2018-06-29 21:20:53,338 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUsed for last 60 seconds is 1994.562500
+[INFO 2018-06-29 21:20:53,339 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryAvailable for last 60 seconds is 733989.106771
+[INFO 2018-06-29 21:20:53,340 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUtilization for last 60 seconds is 0.500000
+[INFO 2018-06-29 21:20:53,342 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUsed for last 60 seconds is 16.797165
+[INFO 2018-06-29 21:20:53,343 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskAvailable for last 60 seconds is 31.594536
+[INFO 2018-06-29 21:20:53,344 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUtilization for last 60 seconds is 34.700000
+[INFO 2018-06-29 21:21:53,337 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric CPUUtilization for last 60 seconds is 0.000000
+[INFO 2018-06-29 21:21:53,339 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUsed for last 60 seconds is 1994.178385
+[INFO 2018-06-29 21:21:53,340 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryAvailable for last 60 seconds is 733989.491536
+[INFO 2018-06-29 21:21:53,341 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUtilization for last 60 seconds is 0.500000
+[INFO 2018-06-29 21:21:53,342 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUsed for last 60 seconds is 16.797165
+[INFO 2018-06-29 21:21:53,343 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskAvailable for last 60 seconds is 31.594536
+[INFO 2018-06-29 21:21:53,344 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUtilization for last 60 seconds is 34.700000
+[INFO 2018-06-29 21:22:53,337 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric CPUUtilization for last 60 seconds is 0.000000
+[INFO 2018-06-29 21:22:53,339 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUsed for last 60 seconds is 1993.958008
+[INFO 2018-06-29 21:22:53,340 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryAvailable for last 60 seconds is 733989.711263
+[INFO 2018-06-29 21:22:53,341 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUtilization for last 60 seconds is 0.500000
+[INFO 2018-06-29 21:22:53,343 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUsed for last 60 seconds is 16.797169
+[INFO 2018-06-29 21:22:53,344 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskAvailable for last 60 seconds is 31.594532
+[INFO 2018-06-29 21:22:53,345 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUtilization for last 60 seconds is 34.700000
+[INFO 2018-06-29 21:23:53,338 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric CPUUtilization for last 60 seconds is 0.000000
+[INFO 2018-06-29 21:23:53,340 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUsed for last 60 seconds is 1993.748372
+[INFO 2018-06-29 21:23:53,341 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryAvailable for last 60 seconds is 733989.923503
+[INFO 2018-06-29 21:23:53,342 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUtilization for last 60 seconds is 0.500000
+[INFO 2018-06-29 21:23:53,343 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUsed for last 60 seconds is 16.797169
+[INFO 2018-06-29 21:23:53,344 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskAvailable for last 60 seconds is 31.594532
+[INFO 2018-06-29 21:23:53,345 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUtilization for last 60 seconds is 34.700000
+[INFO 2018-06-29 21:24:53,338 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric CPUUtilization for last 60 seconds is 0.000000
+[INFO 2018-06-29 21:24:53,340 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUsed for last 60 seconds is 1994.322917
+[INFO 2018-06-29 21:24:53,341 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryAvailable for last 60 seconds is 733989.347656
+[INFO 2018-06-29 21:24:53,342 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUtilization for last 60 seconds is 0.500000
+[INFO 2018-06-29 21:24:53,344 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUsed for last 60 seconds is 16.797169
+[INFO 2018-06-29 21:24:53,345 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskAvailable for last 60 seconds is 31.594532
+[INFO 2018-06-29 21:24:53,346 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUtilization for last 60 seconds is 34.700000
+[INFO 2018-06-29 21:25:53,339 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric CPUUtilization for last 60 seconds is 0.000000
+[INFO 2018-06-29 21:25:53,341 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUsed for last 60 seconds is 1996.107747
+[INFO 2018-06-29 21:25:53,342 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryAvailable for last 60 seconds is 733987.562500
+[INFO 2018-06-29 21:25:53,343 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUtilization for last 60 seconds is 0.500000
+[INFO 2018-06-29 21:25:53,344 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUsed for last 60 seconds is 16.797173
+[INFO 2018-06-29 21:25:53,345 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskAvailable for last 60 seconds is 31.594528
+[INFO 2018-06-29 21:25:53,346 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUtilization for last 60 seconds is 34.700000
+[INFO 2018-06-29 21:26:53,339 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric CPUUtilization for last 60 seconds is 0.000000
+[INFO 2018-06-29 21:26:53,341 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUsed for last 60 seconds is 1994.110026
+[INFO 2018-06-29 21:26:53,342 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryAvailable for last 60 seconds is 733989.559570
+[INFO 2018-06-29 21:26:53,343 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUtilization for last 60 seconds is 0.500000
+[INFO 2018-06-29 21:26:53,345 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUsed for last 60 seconds is 16.797173
+[INFO 2018-06-29 21:26:53,346 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskAvailable for last 60 seconds is 31.594528
+[INFO 2018-06-29 21:26:53,347 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUtilization for last 60 seconds is 34.700000
+[INFO 2018-06-29 21:27:53,340 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric CPUUtilization for last 60 seconds is 0.000000
+[INFO 2018-06-29 21:27:53,342 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUsed for last 60 seconds is 1993.705404
+[INFO 2018-06-29 21:27:53,343 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryAvailable for last 60 seconds is 733989.964518
+[INFO 2018-06-29 21:27:53,344 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUtilization for last 60 seconds is 0.500000
+[INFO 2018-06-29 21:27:53,345 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUsed for last 60 seconds is 16.797173
+[INFO 2018-06-29 21:27:53,346 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskAvailable for last 60 seconds is 31.594528
+[INFO 2018-06-29 21:27:53,347 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUtilization for last 60 seconds is 34.700000
+[INFO 2018-06-29 21:28:53,340 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric CPUUtilization for last 60 seconds is 0.000000
+[INFO 2018-06-29 21:28:53,342 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUsed for last 60 seconds is 1993.662109
+[INFO 2018-06-29 21:28:53,343 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryAvailable for last 60 seconds is 733990.004883
+[INFO 2018-06-29 21:28:53,344 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUtilization for last 60 seconds is 0.500000
+[INFO 2018-06-29 21:28:53,346 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUsed for last 60 seconds is 16.797173
+[INFO 2018-06-29 21:28:53,347 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskAvailable for last 60 seconds is 31.594528
+[INFO 2018-06-29 21:28:53,348 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUtilization for last 60 seconds is 34.700000
+[INFO 2018-06-29 21:29:53,341 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric CPUUtilization for last 60 seconds is 0.000000
+[INFO 2018-06-29 21:29:53,343 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUsed for last 60 seconds is 1993.652344
+[INFO 2018-06-29 21:29:53,344 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryAvailable for last 60 seconds is 733990.017253
+[INFO 2018-06-29 21:29:53,345 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUtilization for last 60 seconds is 0.500000
+[INFO 2018-06-29 21:29:53,346 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUsed for last 60 seconds is 16.797176
+[INFO 2018-06-29 21:29:53,347 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskAvailable for last 60 seconds is 31.594524
+[INFO 2018-06-29 21:29:53,348 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUtilization for last 60 seconds is 34.700000
+[INFO 2018-06-29 21:30:53,341 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric CPUUtilization for last 60 seconds is 0.000000
+[INFO 2018-06-29 21:30:53,343 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUsed for last 60 seconds is 1993.644857
+[INFO 2018-06-29 21:30:53,344 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryAvailable for last 60 seconds is 733990.027018
+[INFO 2018-06-29 21:30:53,345 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUtilization for last 60 seconds is 0.500000
+[INFO 2018-06-29 21:30:53,346 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUsed for last 60 seconds is 16.797176
+[INFO 2018-06-29 21:30:53,348 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskAvailable for last 60 seconds is 31.594524
+[INFO 2018-06-29 21:30:53,348 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUtilization for last 60 seconds is 34.700000
+[INFO 2018-06-29 21:31:53,342 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric CPUUtilization for last 60 seconds is 0.000000
+[INFO 2018-06-29 21:31:53,344 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUsed for last 60 seconds is 1993.640625
+[INFO 2018-06-29 21:31:53,345 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryAvailable for last 60 seconds is 733990.028646
+[INFO 2018-06-29 21:31:53,346 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUtilization for last 60 seconds is 0.500000
+[INFO 2018-06-29 21:31:53,347 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUsed for last 60 seconds is 16.797176
+[INFO 2018-06-29 21:31:53,348 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskAvailable for last 60 seconds is 31.594524
+[INFO 2018-06-29 21:31:53,349 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUtilization for last 60 seconds is 34.700000
+[INFO 2018-06-29 21:32:53,342 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric CPUUtilization for last 60 seconds is 0.000000
+[INFO 2018-06-29 21:32:53,344 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUsed for last 60 seconds is 1993.630859
+[INFO 2018-06-29 21:32:53,345 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryAvailable for last 60 seconds is 733990.037109
+[INFO 2018-06-29 21:32:53,346 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUtilization for last 60 seconds is 0.500000
+[INFO 2018-06-29 21:32:53,347 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUsed for last 60 seconds is 16.797180
+[INFO 2018-06-29 21:32:53,349 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskAvailable for last 60 seconds is 31.594521
+[INFO 2018-06-29 21:32:53,349 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUtilization for last 60 seconds is 34.700000
+[INFO 2018-06-29 21:33:53,343 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric CPUUtilization for last 60 seconds is 0.000000
+[INFO 2018-06-29 21:33:53,345 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUsed for last 60 seconds is 1994.125651
+[INFO 2018-06-29 21:33:53,346 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryAvailable for last 60 seconds is 733989.541341
+[INFO 2018-06-29 21:33:53,347 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUtilization for last 60 seconds is 0.500000
+[INFO 2018-06-29 21:33:53,348 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUsed for last 60 seconds is 16.797180
+[INFO 2018-06-29 21:33:53,349 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskAvailable for last 60 seconds is 31.594521
+[INFO 2018-06-29 21:33:53,350 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUtilization for last 60 seconds is 34.700000
+[INFO 2018-06-29 21:34:53,343 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric CPUUtilization for last 60 seconds is 0.000000
+[INFO 2018-06-29 21:34:53,345 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUsed for last 60 seconds is 1994.051758
+[INFO 2018-06-29 21:34:53,346 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryAvailable for last 60 seconds is 733989.613607
+[INFO 2018-06-29 21:34:53,347 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUtilization for last 60 seconds is 0.500000
+[INFO 2018-06-29 21:34:53,348 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUsed for last 60 seconds is 16.797181
+[INFO 2018-06-29 21:34:53,350 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskAvailable for last 60 seconds is 31.594519
+[INFO 2018-06-29 21:34:53,350 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUtilization for last 60 seconds is 34.700000
+[INFO 2018-06-29 21:35:53,344 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric CPUUtilization for last 60 seconds is 0.016667
+[INFO 2018-06-29 21:35:53,346 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUsed for last 60 seconds is 1993.884440
+[INFO 2018-06-29 21:35:53,347 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryAvailable for last 60 seconds is 733989.782878
+[INFO 2018-06-29 21:35:53,348 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric MemoryUtilization for last 60 seconds is 0.500000
+[INFO 2018-06-29 21:35:53,349 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUsed for last 60 seconds is 16.797184
+[INFO 2018-06-29 21:35:53,350 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskAvailable for last 60 seconds is 31.594517
+[INFO 2018-06-29 21:35:53,351 PID:37449 /usr/local/lib/python3.5/dist-packages/mms/metric.py:start_recording:216 Metric DiskUtilization for last 60 seconds is 34.700000
